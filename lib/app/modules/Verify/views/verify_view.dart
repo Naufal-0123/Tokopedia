@@ -25,10 +25,17 @@ class VerifyView extends GetView<VerifyController> {
                         SizedBox(
                           height: 150,
                         ),
-                        Icon(
-                          Icons.mark_email_read,
-                          size: 100,
-                          color: Colors.teal,
+                        Container(
+                          margin: EdgeInsets.only(top: 10),
+                          width: 150,
+                          height: 150,
+                          decoration: BoxDecoration(
+                              color: Colors.black26,
+                              borderRadius: BorderRadius.circular(8)),
+                          child: Image.asset(
+                            "asset/image/Group 2.png",
+                            fit: BoxFit.none,
+                          ),
                         ),
                         SizedBox(
                           height: 25,
