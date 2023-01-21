@@ -149,6 +149,7 @@ class RegisterView extends GetView<RegisterController> {
                           height: 25,
                         ),
                         InkWell(
+                          onTap: () => Get.toNamed(Routes.LOGIN),
                           child: Container(
                             height: tinggi * 0.07,
                             width: lebar * 1.0,

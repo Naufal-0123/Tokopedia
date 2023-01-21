@@ -109,6 +109,7 @@ class LoginView extends GetView<LoginController> {
                           height: 25,
                         ),
                         InkWell(
+                          onTap: () => Get.toNamed(Routes.HOME),
                           child: Container(
                             height: tinggi * 0.07,
                             width: lebar * 1.0,
