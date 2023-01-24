@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import 'package:tokopedia/app/modules/Detail/bindings/detail_binding.dart';
+import 'package:tokopedia/app/modules/Detail/views/detail_view.dart';
 import 'package:tokopedia/app/modules/Forgotpw/bindings/forgotpw_binding.dart';
 import 'package:tokopedia/app/modules/Forgotpw/views/forgotpw_view.dart';
 import 'package:tokopedia/app/modules/Login/bindings/login_binding.dart';
@@ -18,7 +20,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SPLASH_SCREEN;
+  static const INITIAL = Routes.DETAIL;
 
   static final routes = [
     GetPage(
@@ -50,6 +52,11 @@ class AppPages {
       name: _Paths.VERIFY,
       page: () => VerifyView(),
       binding: VerifyBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL,
+      page: () => DetailView(),
+      binding: DetailBinding(),
     ),
   ];
 }
