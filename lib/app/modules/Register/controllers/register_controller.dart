@@ -7,6 +7,7 @@ class RegisterController extends GetxController {
   changeEye() => showhidepw.toggle();
   final count = 0.obs;
   TextEditingController password = TextEditingController();
+   TextEditingController email = TextEditingController();
   @override
   void onInit() {
     super.onInit();

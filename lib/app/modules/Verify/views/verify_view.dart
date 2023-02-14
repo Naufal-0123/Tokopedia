@@ -1,6 +1,8 @@
+import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:tokopedia/app/routes/app_pages.dart';
 import 'package:tokopedia/config/warna.dart';
 
 import '../controllers/verify_controller.dart';
@@ -56,7 +58,14 @@ class VerifyView extends GetView<VerifyController> {
                           height: 50,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () async { 
+                            await LaunchApp.openApp( 
+                              androidPackageName: 'com.google.android.gm', 
+                              iosUrlScheme: 'googlegmail://', 
+                              appStoreLink: 
+                                  'itms-apps://apps.apple.com/us/app/gmail-email-by-google/id422689480', 
+                            ); 
+                          },
                           child: Container(
                             height: tinggi * 0.07,
                             width: 225,
@@ -75,10 +84,14 @@ class VerifyView extends GetView<VerifyController> {
                             ),
                           ),
                         ),
-                        Text(
-                          "Skip, I’ll confirm later",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 16, color: Colors.black45),
+                        InkWell(
+                          onTap: () => Get.toNamed(Routes.LOGIN),
+                          child: Text(
+                            "Skip, I’ll confirm later",
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(fontSize: 16, color: Colors.black45),
+                          ),
                         ),
                       ],
                     ),

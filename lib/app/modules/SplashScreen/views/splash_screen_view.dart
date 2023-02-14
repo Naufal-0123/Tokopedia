@@ -11,99 +11,119 @@ class SplashScreenView extends GetView<SplashScreenController> {
     double tinggi = MediaQuery.of(context).size.height;
     double lebar = MediaQuery.of(context).size.width;
     return Scaffold(
-        body: Container(
-      height: tinggi,
-      padding: EdgeInsets.fromLTRB(20, 50, 30, 20),
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [bgLogin, bgLogin1])),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            height: tinggi * 0.85,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 30,
-                ),
-                Container(
-                    width: lebar,
-                    height: tinggi * 0.3,
-                    margin: EdgeInsets.only(bottom: 20),
-                    child: Image.asset("asset/image/sp.png")),
-                Container(
-                  width: lebar * 0.5,
-                  child: Text(
-                    'Let’s Get Started',
-                    style: TextStyle(
-                        fontSize: 50,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
+        body: SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Container(
+        height: tinggi,
+        padding: EdgeInsets.fromLTRB(20, 50, 30, 20),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [bgLogin, bgLogin1])),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: tinggi * 0.75,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 30,
                   ),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                Container(
-                  width: lebar * 0.8,
-                  child: Text(
-                    'Connect with each other with chatting or calling. Enjoy safe and private texting',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
+                  Container(
+                      width: lebar,
+                      height: tinggi * 0.3,
+                      margin: EdgeInsets.only(bottom: 20),
+                      child: Image.asset("asset/image/sp.png")),
+                  Container(
+                    width: lebar * 0.5,
+                    child: Text(
+                      'Let’s Get Started',
+                      style: TextStyle(
+                          fontSize: 50,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 100,
-                ),
-                InkWell(
-                  child: Container(
-                    height: tinggi * 0.07,
-                    width: lebar * 1.0,
-                    decoration: BoxDecoration(
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Container(
+                    width: lebar * 0.8,
+                    child: Text(
+                      'Connect with each other with chatting or calling. Enjoy safe and private texting',
+                      style: TextStyle(
+                        fontSize: 20,
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(6)),
-                    child: Center(
-                      child: Text(
-                        "Join Now",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 60,
-                ),
+                  SizedBox(
+                    height: 60,
+                  ),
+                  InkWell(
+                    child: Container(
+                      height: tinggi * 0.07,
+                      width: lebar * 1.0,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(6)),
+                      child: Center(
+                        child: Text(
+                          "Join Now",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Already have an account?",
+                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    )),
+                TextButton(
+                    onPressed: () => Get.toNamed("/login"),
+                    child: Text(
+                      "Login",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ))
               ],
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Already have an account?",
-                    style: TextStyle(color: Colors.white, fontSize: 15),
-                  )),
-              TextButton(
-                  onPressed: () => Get.toNamed("/login"),
-                  child: Text(
-                    "Login",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ))
-            ],
-          )
-        ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Login With",
+                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    )),
+                TextButton(
+                    onPressed: () => Get.toNamed("/phone"),
+                    child: Text(
+                      "Phone Number",
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ))
+              ],
+            )
+          ],
+        ),
       ),
     ));
   }

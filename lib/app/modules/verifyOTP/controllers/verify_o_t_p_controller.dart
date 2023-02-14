@@ -1,10 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ForgotpwController extends GetxController {
-  //TODO: Implement ForgotpwController
+class VerifyOTPController extends GetxController {
+  //TODO: Implement VerifyOTPController
+
   final count = 0.obs;
-  TextEditingController email = TextEditingController();
   @override
   void onInit() {
     super.onInit();

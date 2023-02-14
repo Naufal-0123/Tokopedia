@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:tokopedia/app/controllers/auth_controller_controller.dart';
 import 'package:tokopedia/app/routes/app_pages.dart';
 import 'package:tokopedia/config/warna.dart';
 
@@ -8,6 +9,7 @@ import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
   final controller = Get.put(LoginController());
+  final authC = Get.put(AuthControllerController());
   @override
   Widget build(BuildContext context) {
     double tinggi = MediaQuery.of(context).size.height;
@@ -50,6 +52,7 @@ class LoginView extends GetView<LoginController> {
                           ),
                         ),
                         TextFormField(
+                          controller: controller.email,
                           style: TextStyle(color: Colors.black),
                           cursorColor: Colors.black,
                           keyboardType: TextInputType.emailAddress,
@@ -109,7 +112,8 @@ class LoginView extends GetView<LoginController> {
                           height: 25,
                         ),
                         InkWell(
-                          onTap: () => Get.toNamed(Routes.HOME),
+                          onTap: () => authC.login(
+                              controller.email.text, controller.password.text),
                           child: Container(
                             height: tinggi * 0.07,
                             width: lebar * 1.0,
@@ -191,7 +195,7 @@ class LoginView extends GetView<LoginController> {
                                   style: ElevatedButton.styleFrom(
                                     primary: Colors.white,
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () => authC.signInWithGoogle(),
                                   child: Row(
                                     children: [
                                       Image.asset("asset/image/Google.png"),

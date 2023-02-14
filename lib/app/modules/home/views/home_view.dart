@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+import 'package:tokopedia/app/controllers/auth_controller_controller.dart';
 import 'package:tokopedia/config/warna.dart';
 
 import '../controllers/home_controller.dart';
@@ -12,6 +13,7 @@ import '../controllers/home_controller.dart';
 class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
+    final authD = Get.put(AuthControllerController());
     double tinggi = MediaQuery.of(context).size.height;
     double lebar = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -66,7 +68,9 @@ class HomeView extends GetView<HomeController> {
                           color: Colors.white,
                           size: 30,
                         ),
-                        Image.asset("asset/image/menu 1.png")
+                        InkWell(
+                            onTap: () => authD.logOut(),
+                            child: Image.asset("asset/image/menu 1.png"))
                       ],
                     ),
                   )

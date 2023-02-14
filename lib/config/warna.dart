@@ -32,3 +32,6 @@ Color subjudul3 = const Color(0xb31b1b1b);
 Color bgCashback = const Color(0x1a03A759);
 Color footer = const Color(0x1a292D32);
 Color bgNav = const Color(0xff03A759);
+Color bgAbu = const Color.fromARGB(127, 27, 27, 27);
+Color bgHeader = const Color(0xff03A759);
+Color bgMerah = const Color(0xffD6001C);

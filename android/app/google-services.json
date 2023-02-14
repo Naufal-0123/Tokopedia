@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1041358019843",
+    "project_id": "tokopedia-bd5c8",
+    "storage_bucket": "tokopedia-bd5c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041358019843:android:65f1aab841586754d01d36",
+        "android_client_info": {
+          "package_name": "com.tokopedia.tokopedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1041358019843-o47q9b90qa6uorupun9e4d7np4j418lk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0ZMrtFyUBQBq89AUSs5scYsFfQQG-AqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1041358019843-o47q9b90qa6uorupun9e4d7np4j418lk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

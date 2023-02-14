@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:tokopedia/app/controllers/auth_controller_controller.dart';
 import 'package:tokopedia/app/routes/app_pages.dart';
 import 'package:tokopedia/config/warna.dart';
 
@@ -8,6 +9,7 @@ import '../controllers/register_controller.dart';
 
 class RegisterView extends GetView<RegisterController> {
   final controller = Get.put(RegisterController());
+  final authA = Get.put(AuthControllerController());
   @override
   Widget build(BuildContext context) {
     double tinggi = MediaQuery.of(context).size.height;
@@ -61,6 +63,7 @@ class RegisterView extends GetView<RegisterController> {
                           ),
                         ),
                         TextFormField(
+                          controller: controller.email,
                           style: TextStyle(color: Colors.black),
                           cursorColor: Colors.black,
                           keyboardType: TextInputType.emailAddress,
@@ -149,7 +152,8 @@ class RegisterView extends GetView<RegisterController> {
                           height: 25,
                         ),
                         InkWell(
-                          onTap: () => Get.toNamed(Routes.LOGIN),
+                          onTap: () => authA.register(
+                              controller.email.text, controller.password.text),
                           child: Container(
                             height: tinggi * 0.07,
                             width: lebar * 1.0,
